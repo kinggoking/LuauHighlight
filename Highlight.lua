@@ -63,8 +63,8 @@ local LastData: { [TextObject]: ObjectData } = {}
 local Cleanups: { [TextObject]: () -> () } = {}
 
 local Highlighter = {
-	defaultLexer = loadstring(game:HttpGet("https://raw.githubusercontent.com/SiBiRiK/highlighter/main/Lexer"))(),
-	defaultLang = loadstring(game:HttpGet("https://raw.githubusercontent.com/SiBiRiK/highlighter/main/Lang.lua"))()
+	defaultLexer = require(script.Lexer),
+	defaultLang = require(script.Lexer.Language)
 }
 
 function Highlighter.highlight(Editor:Instance,Lines:Instance)
